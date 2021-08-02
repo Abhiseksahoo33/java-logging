@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
+    //file appender to display the log in a log file
     <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
         <file>myLogFile.log</file>
-        
         <append>true</append>
+        <encoder>
+            <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    // console appender to display the logs in console
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+
+
         <encoder>
             <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>
         </encoder>
@@ -11,5 +22,6 @@
 
     <root level="TRACE">
         <appender-ref ref="fileAppender" />
+        <appender-ref ref="ConsoleAppender"/>
     </root>
 </configuration>
