@@ -129,3 +129,10 @@ in logback.xml
             LOGGER.warn("result : {} ",x);
             LOGGER.error("result : {} ",x);
          
+         
+11. to open the .jar file 
+         
+         a- copy it to anew folder 
+         
+         open cmd write jar -xvf jarfile_name
+         
