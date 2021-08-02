@@ -1,6 +1,9 @@
 # java-logging
 this repo contains how to setup logging in intellij 
 
+
+link of logfile - https://www.srccodes.com/logback-using-slf4j-hello-world-example/
+
 1. open intellij idea 
 
 2. create project (maven architype quickstart) 
@@ -66,4 +69,63 @@ this repo contains how to setup logging in intellij
 6. build project again
 7.add resources folder in the main 
 8. Add logback.xml file in resources folder 
-9.
+9.copy in logback.xml
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>myLogFile.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="TRACE">
+        <appender-ref ref="fileAppender" />
+    </root>
+</configuration>
+
+
+10.log file will created .
+
+
+to print the log in console 
+
+write 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="fileAppender" class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder>
+            <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="TRACE">
+        <appender-ref ref="fileAppender" />
+    </root>
+</configuration>
+
+in logback.xml
+         
+         
+         
+ 11.        never write log file for user credentials 
+         
+         
+            <root level="OFF">
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="ConsoleAppender"/>
+    </root>
+         
+         
+12.  //ORDERING : TRACE - DEBUG - INFO- WARN - ERROR
+            LOGGER.trace("result : {} ",x);
+            LOGGER.debug("result : {} ",x);
+            LOGGER.info("result : {} ",x);
+            LOGGER.warn("result : {} ",x);
+            LOGGER.error("result : {} ",x);
+         
