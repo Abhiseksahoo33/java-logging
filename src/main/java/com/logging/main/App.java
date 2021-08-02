@@ -31,8 +31,17 @@ public class App {
     private static final Logger LOGGER= LoggerFactory.getLogger(App.class);
     public static void main(String[] args) {
         try{
-            int x =10/0;
-        LOGGER.info("result : {} ",x);
+            int x =10/5;
+
+            //ORDERING : TRACE - DEBUG - INFO- WARN - ERROR
+            LOGGER.trace("result : {} ",x);
+            LOGGER.debug("result : {} ",x);
+            LOGGER.info("result : {} ",x);
+            LOGGER.warn("result : {} ",x);
+            LOGGER.error("result : {} ",x);
+
+
+
 
         }
         catch (ArithmeticException e)

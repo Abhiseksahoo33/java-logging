@@ -20,7 +20,7 @@
         </encoder>
     </appender>
 
-    <root level="TRACE">
+    <root level="WARN">
         <appender-ref ref="fileAppender" />
         <appender-ref ref="ConsoleAppender"/>
     </root>
